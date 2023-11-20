@@ -12,9 +12,10 @@
       <paths name="ubuntu1804 (5a12db04-b334-4e59-b95f-c816b33e0d1c)">
         <serverdata>
           <mappings>
-            <mapping deploy="/tmp/tmp.Bm6tBQMEjW" local="$PROJECT_DIR$" />
+            <mapping deploy="/home/wyf/clion/yftcp" local="$PROJECT_DIR$" />
           </mappings>
           <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug" />
             <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug" />
           </excludedPaths>
         </serverdata>
