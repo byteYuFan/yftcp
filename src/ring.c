@@ -5,10 +5,14 @@
 #include "ring.h"
 #include "string.h"
 
+// 单例结构体的指针
+extern struct hz_ring_interface *ring_singleton_instance;
+
 struct hz_ring_interface *hz_get_ring_interface_instance(void) {
     if (ring_singleton_instance == NULL) {
         // 如果实例不存在，则创建一个新的实例
-        ring_singleton_instance = rte_malloc("struct hz_ring_interface",sizeof(struct hz_ring_interface),0);
+        ring_singleton_instance = rte_malloc("struct hz_ring_interface", sizeof(struct hz_ring_interface), 0);
+        // todo 记得free
         memset(ring_singleton_instance, 0, sizeof(struct hz_ring_interface));
         // 初始化实例中的成员
         // 请根据你的需求初始化 in 和 out

@@ -9,6 +9,10 @@
 #include "deal_packet.h"
 #include "arp_table.h"
 #include "timer.h"
+#include "red_black.h"
+#include "conn_status.h"
+#include <test/rte_tailq.h>
+#include "udp_server_test.h"
 
 uint32_t global_local_ipv4 = MAKE_IPV4_ADDR(192, 168, 182, 41);
 unsigned int global_ethernet_device_id = 0;
@@ -17,6 +21,31 @@ static const struct rte_eth_conf port_conf_default = {
         .rxmode = {.max_rx_pkt_len = RTE_ETHER_MAX_LEN}
 };
 struct rte_ether_addr global_default_arp_mac = {{0xff, 0xff, 0xff, 0xff, 0xff, 0xff}};
+// 全局变量并以给定形式初始化
+struct hz_ring_name global_ring_name = {
+        .send_name = {
+                "acacd", "csacsa", "sdfasd", "asfdas", "cxvxcv", "opiuoi", "mnbmnb", "zxcvbn",
+                "lkjhgf", "qazwsx", "vbnmki", "ertyui", "dfghjk", "xcvbnm", "poiuyt", "lkjhg",
+                "zxcvb", "asdfg", "qwert", "yuiop", "hjkl", "nmnmn", "vbnvbn", "qweqwe",
+                "sfdsg", "rewre", "uyyuu", "mbvnm", "poiuy", "werwe", "lkjlk", "zxzxz",
+                "erter", "bvnmb", "fdsaf", "poiuj", "zxczx", "vbnvb", "qweqw", "zxcvb",
+                "uiopp", "mnbvb", "sdfgh", "qazxc", "vbnui", "poiuj", "lkjhu", "zxcvb",
+                "lkjhg", "mnbvc", "zxcvb", "lkjui", "uytred", "mnbvc", "poiuy", "qazxc",
+                "lkjmn", "zxzxz", "sdfgh", "vbnmb", "qwewq", "poiuy", "zxcvb", "lkjhg"
+        },
+        .receive_name = {
+                "qwer", "asdf", "zxcv", "hjkl", "uiop", "yxcv", "bnmn", "vcxz",
+                "lkjh", "poiuy", "mnbvc", "zxcvb", "qweqw", "asdfg", "lkjlk", "zxczx",
+                "erter", "bvnmb", "fdsaf", "poiuj", "zxczx", "vbnvb", "qweqw", "zxcvb",
+                "uiopp", "mnbvb", "sdfgh", "qazxc", "vbnui", "poiuj", "lkjhu", "zxcvb",
+                "lkjhg", "mnbvc", "zxcvb", "lkjui", "uytred", "mnbvc", "poiuy", "qazxc",
+                "lkjmn", "zxzxz", "sdfgh", "vbnmb", "qwewq", "poiuy", "zxcvb", "lkjhg",
+                "sdfgh", "qazxc", "mnbvc", "lkjhu", "poiuy", "zxcvb", "lkjhg", "poiuy",
+                "lkjhg", "mnbvc", "zxcvb", "lkjui", "uytred", "mnbvc", "poiuy", "qazxc"
+        },
+        .count=0,
+        .lock = PTHREAD_MUTEX_INITIALIZER
+};
 
 static struct rte_mempool *init_dpdk_environment(int argc, char *argv[]);
 
@@ -24,21 +53,29 @@ static void yf_init_port(struct rte_mempool *memory_buffer_pool);
 
 static void enable_mul_thread_deal_pkt(struct rte_mempool *memory_buffer_pool);
 
-static void init(void);
 
-static void enable_arp_timer(struct rte_mempool *memory_buffer_pool, struct rte_timer *, rte_timer_cb_t function);
+static void init(void);;
 
 struct hz_ring_interface *ring_singleton_instance = NULL;
 struct hz_arp_table *arp_table_singleton_instance = NULL;
+struct hz_binary_search_tree *red_black_tree_singleton_instance = NULL;
+struct rte_mempool *global_memory_buffer_pool = NULL;
+struct hz_list_connection_info *conn_info_singleton_instance = NULL;
 
 int main(int argc, char *argv[]) {
     struct rte_mempool *memory_buffer_pool = init_dpdk_environment(argc, argv);
+    global_memory_buffer_pool = memory_buffer_pool;
     init();
     enable_mul_thread_deal_pkt(memory_buffer_pool);
     struct hz_ring_interface *ring = hz_get_ring_interface_instance();
     rte_timer_subsystem_init();
     struct rte_timer arp_timer;
-    enable_arp_timer(memory_buffer_pool, &arp_timer,arp_request_timer_cb);
+    rte_timer_init(&arp_timer);
+    /* load timer0, every second, on master lcore, reloaded automatically */
+    unsigned hz = rte_get_timer_hz();
+    unsigned lcore_id = rte_lcore_id();
+    rte_timer_reset(&arp_timer, hz, PERIODICAL, lcore_id, arp_request_timer_cb, memory_buffer_pool);
+
 
     printf("*******************DPDK STARTING****************************\n");
     while (1) {
@@ -137,18 +174,20 @@ static void enable_mul_thread_deal_pkt(struct rte_mempool *memory_buffer_pool) {
     unsigned lcore_id = rte_lcore_id();
     lcore_id = rte_get_next_lcore(lcore_id, 1, 0);
     rte_eal_remote_launch(hz_pkt_process, memory_buffer_pool, lcore_id);
+
+
 }
+
 
 static void init(void) {
     ring_singleton_instance = hz_get_ring_interface_instance();
+    if (!ring_singleton_instance) rte_exit(EXIT_FAILURE, "init ring_singleton_instance error.\n");
     arp_table_singleton_instance = hz_get_arp_table_instance();
+    if (!arp_table_singleton_instance) rte_exit(EXIT_FAILURE, "init arp_table_singleton_instance.\n");
+    conn_info_singleton_instance = hz_get_conn_list_info_instance();
+    if (!conn_info_singleton_instance)rte_exit(EXIT_FAILURE, "init arp_table_singleton_instance.\n");
 }
 
-static void
-enable_arp_timer(struct rte_mempool *memory_buffer_pool, struct rte_timer *arp_timer, rte_timer_cb_t function) {
-    rte_timer_init(arp_timer);
-    /* load timer0, every second, on master lcore, reloaded automatically */
-    unsigned hz = rte_get_timer_hz();
-    unsigned lcore_id = rte_lcore_id();
-    rte_timer_reset(arp_timer, hz, PERIODICAL, lcore_id, function, memory_buffer_pool);
-}
+
+
+

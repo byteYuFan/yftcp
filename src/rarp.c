@@ -5,6 +5,7 @@
 #include "yftcp.h"
 #include "ring.h"
 #include "arp_table.h"
+#include "rarp.h"
 
 void hz_process_with_reserve_arp(struct rte_mempool *memory_buffer_pool, struct rte_arp_hdr *arp_header) {
     struct hz_ring_interface *ring = hz_get_ring_interface_instance();

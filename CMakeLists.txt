@@ -30,4 +30,35 @@ add_executable(yftcp
         src/tcp.c
         src/tcp.c
         src/icmp.c
-        src/icmp.c)
+        src/icmp.c
+        src/ipv4.h
+        src/ipv4.h
+        src/icmp.h
+        src/icmp.h
+        src/tcp.h
+        src/tcp.h
+        src/rarp.h
+        src/rarp.h
+        test/test_check_sum_icmp.c
+        src/deal_udp.c
+        src/deal_udp.h
+        src/deal_udp.h
+        src/deal_udp.h
+        src/deal_udp.c
+        src/udp_info.c
+        src/udp_info.h
+        src/udp_info.h
+        src/conn_status.c
+        src/conn_status.h
+        src/conn_status.h
+        src/conn_status.c
+        src/red_black.c
+        src/red_black.h
+        src/red_black.h
+        src/red_black.h
+        src/red_black.c
+        src/socket.c
+        src/socket.h
+        src/socket.h
+        src/udp_server_test.h
+        src/udp_server_test.c)

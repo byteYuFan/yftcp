@@ -1,3 +1,3 @@
-/tmp/tmp.Bm6tBQMEjW/cmake-build-debug/CMakeFiles/yftcp.dir
-/tmp/tmp.Bm6tBQMEjW/cmake-build-debug/CMakeFiles/edit_cache.dir
-/tmp/tmp.Bm6tBQMEjW/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/item/big-innovate/yftcp/cmake-build-debug/CMakeFiles/yftcp.dir
+D:/item/big-innovate/yftcp/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/item/big-innovate/yftcp/cmake-build-debug/CMakeFiles/rebuild_cache.dir

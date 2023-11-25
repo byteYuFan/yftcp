@@ -38,6 +38,7 @@ uint32_t hz_get_ip_by_mac(struct rte_ether_addr *mac) {
 
 struct hz_arp_table_node *hz_create_arp_table_node(uint32_t ip, struct rte_ether_addr mac, uint8_t type) {
     struct hz_arp_table_node *arp_node = rte_malloc(" struct hz_arp_table_node", sizeof(struct hz_arp_table_node), 0);
+    // todo 记得free
     if (arp_node == NULL)return NULL;
     memset(arp_node, 0, sizeof(struct hz_arp_table_node));
     arp_node->ip = ip;

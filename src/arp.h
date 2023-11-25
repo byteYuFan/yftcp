@@ -8,7 +8,6 @@
 #include "yftcp.h"
 
 
-
 void hz_process_with_arp(struct rte_mempool *memory_buffer_pool, struct rte_arp_hdr *arp_header);
 
 void

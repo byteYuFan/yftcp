@@ -19,7 +19,7 @@
     do {                                                          \
           if (node->prev != NULL) node->prev->next = node->next; \
           if (node->next != NULL) node->next->prev = node->prev; \
-          if (list == node) list = item->next; \
+          if (list == node) list = node->next; \
           node->prev = node->next = NULL; \
     } while (0)
 

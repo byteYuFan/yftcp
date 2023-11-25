@@ -6,13 +6,19 @@
 #include "config.h"
 #include "yftcp.h"
 #include "ring.h"
-
-extern void hz_process_with_ipv4(struct rte_mbuf *memory_buffer, struct rte_ipv4_hdr *ipv4_header);
-
-extern void hz_process_with_reserve_arp(struct rte_mempool *memory_buffer_pool, struct rte_arp_hdr *arp_header);
+#include "arp.h"
+#include "ipv4.h"
+#include "rarp.h"
+#include "udp.h"
+#include "udp_server_test.h"
 
 int hz_pkt_process(__attribute__((unused)) void *arg) {
     struct rte_mempool *memory_buffer_pool = (struct rte_mempool *) arg;
+    unsigned lcore_id = rte_lcore_id();
+    lcore_id = rte_get_next_lcore(lcore_id, 1, 0);
+    rte_eal_remote_launch(udp_server_enter, memory_buffer_pool, lcore_id);
+    lcore_id = rte_get_next_lcore(lcore_id, 1, 0);
+    rte_eal_remote_launch(udp_server_enter_2, memory_buffer_pool, lcore_id);
     struct hz_ring_interface *ring = hz_get_ring_interface_instance();
     while (1) {
         struct rte_mbuf *rx[BURST_SIZE];
@@ -26,6 +32,7 @@ int hz_pkt_process(__attribute__((unused)) void *arg) {
                                                                          struct rte_arp_hdr*,
                                                                          sizeof(struct rte_ether_hdr));
                 hz_process_with_arp(memory_buffer_pool, arp_header);
+                rte_pktmbuf_free(rx[i]);
             } else if (ether_header->ether_type == rte_cpu_to_be_16(RTE_ETHER_TYPE_RARP)) {
                 struct rte_arp_hdr *arp_header = rte_pktmbuf_mtod_offset(rx[i],
                                                                          struct rte_arp_hdr*,
@@ -34,13 +41,15 @@ int hz_pkt_process(__attribute__((unused)) void *arg) {
             } else if (ether_header->ether_type == rte_cpu_to_be_16(RTE_ETHER_TYPE_IPV4)) {
                 struct rte_ipv4_hdr *ipv4_header = rte_pktmbuf_mtod_offset(rx[i], struct rte_ipv4_hdr*,
                                                                            sizeof(struct rte_ether_hdr));
-                hz_process_with_ipv4(rx[i], ipv4_header);
+                hz_process_with_ipv4(memory_buffer_pool, ether_header, ipv4_header);
+                rte_pktmbuf_free(rx[i]);
             } else {
                 rte_pktmbuf_free(rx[i]);
                 continue;
             }
-
         }
+        hz_process_out_udp(memory_buffer_pool);
+
     }
 
     return 0;

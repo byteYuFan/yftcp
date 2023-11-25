@@ -53,10 +53,10 @@ RM = /root/cmake-3.26.5/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /tmp/tmp.Bm6tBQMEjW
+CMAKE_SOURCE_DIR = /home/wyf/clion/yftcp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /tmp/tmp.Bm6tBQMEjW/cmake-build-debug
+CMAKE_BINARY_DIR = /home/wyf/clion/yftcp/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/yftcp.dir/depend.make
@@ -69,31 +69,207 @@ include CMakeFiles/yftcp.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/yftcp.dir/flags.make
 
-CMakeFiles/yftcp.dir/main.cpp.o: CMakeFiles/yftcp.dir/flags.make
-CMakeFiles/yftcp.dir/main.cpp.o: /tmp/tmp.Bm6tBQMEjW/main.cpp
-CMakeFiles/yftcp.dir/main.cpp.o: CMakeFiles/yftcp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tmp/tmp.Bm6tBQMEjW/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/yftcp.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/yftcp.dir/main.cpp.o -MF CMakeFiles/yftcp.dir/main.cpp.o.d -o CMakeFiles/yftcp.dir/main.cpp.o -c /tmp/tmp.Bm6tBQMEjW/main.cpp
+CMakeFiles/yftcp.dir/src/arp.c.o: CMakeFiles/yftcp.dir/flags.make
+CMakeFiles/yftcp.dir/src/arp.c.o: /home/wyf/clion/yftcp/src/arp.c
+CMakeFiles/yftcp.dir/src/arp.c.o: CMakeFiles/yftcp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wyf/clion/yftcp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/yftcp.dir/src/arp.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/yftcp.dir/src/arp.c.o -MF CMakeFiles/yftcp.dir/src/arp.c.o.d -o CMakeFiles/yftcp.dir/src/arp.c.o -c /home/wyf/clion/yftcp/src/arp.c
 
-CMakeFiles/yftcp.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/yftcp.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /tmp/tmp.Bm6tBQMEjW/main.cpp > CMakeFiles/yftcp.dir/main.cpp.i
+CMakeFiles/yftcp.dir/src/arp.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/yftcp.dir/src/arp.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/wyf/clion/yftcp/src/arp.c > CMakeFiles/yftcp.dir/src/arp.c.i
 
-CMakeFiles/yftcp.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/yftcp.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /tmp/tmp.Bm6tBQMEjW/main.cpp -o CMakeFiles/yftcp.dir/main.cpp.s
+CMakeFiles/yftcp.dir/src/arp.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/yftcp.dir/src/arp.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/wyf/clion/yftcp/src/arp.c -o CMakeFiles/yftcp.dir/src/arp.c.s
+
+CMakeFiles/yftcp.dir/src/main.c.o: CMakeFiles/yftcp.dir/flags.make
+CMakeFiles/yftcp.dir/src/main.c.o: /home/wyf/clion/yftcp/src/main.c
+CMakeFiles/yftcp.dir/src/main.c.o: CMakeFiles/yftcp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wyf/clion/yftcp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/yftcp.dir/src/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/yftcp.dir/src/main.c.o -MF CMakeFiles/yftcp.dir/src/main.c.o.d -o CMakeFiles/yftcp.dir/src/main.c.o -c /home/wyf/clion/yftcp/src/main.c
+
+CMakeFiles/yftcp.dir/src/main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/yftcp.dir/src/main.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/wyf/clion/yftcp/src/main.c > CMakeFiles/yftcp.dir/src/main.c.i
+
+CMakeFiles/yftcp.dir/src/main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/yftcp.dir/src/main.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/wyf/clion/yftcp/src/main.c -o CMakeFiles/yftcp.dir/src/main.c.s
+
+CMakeFiles/yftcp.dir/src/function.c.o: CMakeFiles/yftcp.dir/flags.make
+CMakeFiles/yftcp.dir/src/function.c.o: /home/wyf/clion/yftcp/src/function.c
+CMakeFiles/yftcp.dir/src/function.c.o: CMakeFiles/yftcp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wyf/clion/yftcp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/yftcp.dir/src/function.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/yftcp.dir/src/function.c.o -MF CMakeFiles/yftcp.dir/src/function.c.o.d -o CMakeFiles/yftcp.dir/src/function.c.o -c /home/wyf/clion/yftcp/src/function.c
+
+CMakeFiles/yftcp.dir/src/function.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/yftcp.dir/src/function.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/wyf/clion/yftcp/src/function.c > CMakeFiles/yftcp.dir/src/function.c.i
+
+CMakeFiles/yftcp.dir/src/function.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/yftcp.dir/src/function.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/wyf/clion/yftcp/src/function.c -o CMakeFiles/yftcp.dir/src/function.c.s
+
+CMakeFiles/yftcp.dir/src/ring.c.o: CMakeFiles/yftcp.dir/flags.make
+CMakeFiles/yftcp.dir/src/ring.c.o: /home/wyf/clion/yftcp/src/ring.c
+CMakeFiles/yftcp.dir/src/ring.c.o: CMakeFiles/yftcp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wyf/clion/yftcp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/yftcp.dir/src/ring.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/yftcp.dir/src/ring.c.o -MF CMakeFiles/yftcp.dir/src/ring.c.o.d -o CMakeFiles/yftcp.dir/src/ring.c.o -c /home/wyf/clion/yftcp/src/ring.c
+
+CMakeFiles/yftcp.dir/src/ring.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/yftcp.dir/src/ring.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/wyf/clion/yftcp/src/ring.c > CMakeFiles/yftcp.dir/src/ring.c.i
+
+CMakeFiles/yftcp.dir/src/ring.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/yftcp.dir/src/ring.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/wyf/clion/yftcp/src/ring.c -o CMakeFiles/yftcp.dir/src/ring.c.s
+
+CMakeFiles/yftcp.dir/src/deal_packet.c.o: CMakeFiles/yftcp.dir/flags.make
+CMakeFiles/yftcp.dir/src/deal_packet.c.o: /home/wyf/clion/yftcp/src/deal_packet.c
+CMakeFiles/yftcp.dir/src/deal_packet.c.o: CMakeFiles/yftcp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wyf/clion/yftcp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/yftcp.dir/src/deal_packet.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/yftcp.dir/src/deal_packet.c.o -MF CMakeFiles/yftcp.dir/src/deal_packet.c.o.d -o CMakeFiles/yftcp.dir/src/deal_packet.c.o -c /home/wyf/clion/yftcp/src/deal_packet.c
+
+CMakeFiles/yftcp.dir/src/deal_packet.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/yftcp.dir/src/deal_packet.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/wyf/clion/yftcp/src/deal_packet.c > CMakeFiles/yftcp.dir/src/deal_packet.c.i
+
+CMakeFiles/yftcp.dir/src/deal_packet.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/yftcp.dir/src/deal_packet.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/wyf/clion/yftcp/src/deal_packet.c -o CMakeFiles/yftcp.dir/src/deal_packet.c.s
+
+CMakeFiles/yftcp.dir/src/arp_table.c.o: CMakeFiles/yftcp.dir/flags.make
+CMakeFiles/yftcp.dir/src/arp_table.c.o: /home/wyf/clion/yftcp/src/arp_table.c
+CMakeFiles/yftcp.dir/src/arp_table.c.o: CMakeFiles/yftcp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wyf/clion/yftcp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/yftcp.dir/src/arp_table.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/yftcp.dir/src/arp_table.c.o -MF CMakeFiles/yftcp.dir/src/arp_table.c.o.d -o CMakeFiles/yftcp.dir/src/arp_table.c.o -c /home/wyf/clion/yftcp/src/arp_table.c
+
+CMakeFiles/yftcp.dir/src/arp_table.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/yftcp.dir/src/arp_table.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/wyf/clion/yftcp/src/arp_table.c > CMakeFiles/yftcp.dir/src/arp_table.c.i
+
+CMakeFiles/yftcp.dir/src/arp_table.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/yftcp.dir/src/arp_table.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/wyf/clion/yftcp/src/arp_table.c -o CMakeFiles/yftcp.dir/src/arp_table.c.s
+
+CMakeFiles/yftcp.dir/src/timer.c.o: CMakeFiles/yftcp.dir/flags.make
+CMakeFiles/yftcp.dir/src/timer.c.o: /home/wyf/clion/yftcp/src/timer.c
+CMakeFiles/yftcp.dir/src/timer.c.o: CMakeFiles/yftcp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wyf/clion/yftcp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/yftcp.dir/src/timer.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/yftcp.dir/src/timer.c.o -MF CMakeFiles/yftcp.dir/src/timer.c.o.d -o CMakeFiles/yftcp.dir/src/timer.c.o -c /home/wyf/clion/yftcp/src/timer.c
+
+CMakeFiles/yftcp.dir/src/timer.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/yftcp.dir/src/timer.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/wyf/clion/yftcp/src/timer.c > CMakeFiles/yftcp.dir/src/timer.c.i
+
+CMakeFiles/yftcp.dir/src/timer.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/yftcp.dir/src/timer.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/wyf/clion/yftcp/src/timer.c -o CMakeFiles/yftcp.dir/src/timer.c.s
+
+CMakeFiles/yftcp.dir/src/udp.c.o: CMakeFiles/yftcp.dir/flags.make
+CMakeFiles/yftcp.dir/src/udp.c.o: /home/wyf/clion/yftcp/src/udp.c
+CMakeFiles/yftcp.dir/src/udp.c.o: CMakeFiles/yftcp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wyf/clion/yftcp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/yftcp.dir/src/udp.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/yftcp.dir/src/udp.c.o -MF CMakeFiles/yftcp.dir/src/udp.c.o.d -o CMakeFiles/yftcp.dir/src/udp.c.o -c /home/wyf/clion/yftcp/src/udp.c
+
+CMakeFiles/yftcp.dir/src/udp.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/yftcp.dir/src/udp.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/wyf/clion/yftcp/src/udp.c > CMakeFiles/yftcp.dir/src/udp.c.i
+
+CMakeFiles/yftcp.dir/src/udp.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/yftcp.dir/src/udp.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/wyf/clion/yftcp/src/udp.c -o CMakeFiles/yftcp.dir/src/udp.c.s
+
+CMakeFiles/yftcp.dir/src/deal_ipv4.c.o: CMakeFiles/yftcp.dir/flags.make
+CMakeFiles/yftcp.dir/src/deal_ipv4.c.o: /home/wyf/clion/yftcp/src/deal_ipv4.c
+CMakeFiles/yftcp.dir/src/deal_ipv4.c.o: CMakeFiles/yftcp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wyf/clion/yftcp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/yftcp.dir/src/deal_ipv4.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/yftcp.dir/src/deal_ipv4.c.o -MF CMakeFiles/yftcp.dir/src/deal_ipv4.c.o.d -o CMakeFiles/yftcp.dir/src/deal_ipv4.c.o -c /home/wyf/clion/yftcp/src/deal_ipv4.c
+
+CMakeFiles/yftcp.dir/src/deal_ipv4.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/yftcp.dir/src/deal_ipv4.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/wyf/clion/yftcp/src/deal_ipv4.c > CMakeFiles/yftcp.dir/src/deal_ipv4.c.i
+
+CMakeFiles/yftcp.dir/src/deal_ipv4.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/yftcp.dir/src/deal_ipv4.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/wyf/clion/yftcp/src/deal_ipv4.c -o CMakeFiles/yftcp.dir/src/deal_ipv4.c.s
+
+CMakeFiles/yftcp.dir/src/rarp.c.o: CMakeFiles/yftcp.dir/flags.make
+CMakeFiles/yftcp.dir/src/rarp.c.o: /home/wyf/clion/yftcp/src/rarp.c
+CMakeFiles/yftcp.dir/src/rarp.c.o: CMakeFiles/yftcp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wyf/clion/yftcp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/yftcp.dir/src/rarp.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/yftcp.dir/src/rarp.c.o -MF CMakeFiles/yftcp.dir/src/rarp.c.o.d -o CMakeFiles/yftcp.dir/src/rarp.c.o -c /home/wyf/clion/yftcp/src/rarp.c
+
+CMakeFiles/yftcp.dir/src/rarp.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/yftcp.dir/src/rarp.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/wyf/clion/yftcp/src/rarp.c > CMakeFiles/yftcp.dir/src/rarp.c.i
+
+CMakeFiles/yftcp.dir/src/rarp.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/yftcp.dir/src/rarp.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/wyf/clion/yftcp/src/rarp.c -o CMakeFiles/yftcp.dir/src/rarp.c.s
+
+CMakeFiles/yftcp.dir/src/tcp.c.o: CMakeFiles/yftcp.dir/flags.make
+CMakeFiles/yftcp.dir/src/tcp.c.o: /home/wyf/clion/yftcp/src/tcp.c
+CMakeFiles/yftcp.dir/src/tcp.c.o: CMakeFiles/yftcp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wyf/clion/yftcp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/yftcp.dir/src/tcp.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/yftcp.dir/src/tcp.c.o -MF CMakeFiles/yftcp.dir/src/tcp.c.o.d -o CMakeFiles/yftcp.dir/src/tcp.c.o -c /home/wyf/clion/yftcp/src/tcp.c
+
+CMakeFiles/yftcp.dir/src/tcp.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/yftcp.dir/src/tcp.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/wyf/clion/yftcp/src/tcp.c > CMakeFiles/yftcp.dir/src/tcp.c.i
+
+CMakeFiles/yftcp.dir/src/tcp.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/yftcp.dir/src/tcp.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/wyf/clion/yftcp/src/tcp.c -o CMakeFiles/yftcp.dir/src/tcp.c.s
+
+CMakeFiles/yftcp.dir/src/icmp.c.o: CMakeFiles/yftcp.dir/flags.make
+CMakeFiles/yftcp.dir/src/icmp.c.o: /home/wyf/clion/yftcp/src/icmp.c
+CMakeFiles/yftcp.dir/src/icmp.c.o: CMakeFiles/yftcp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wyf/clion/yftcp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/yftcp.dir/src/icmp.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/yftcp.dir/src/icmp.c.o -MF CMakeFiles/yftcp.dir/src/icmp.c.o.d -o CMakeFiles/yftcp.dir/src/icmp.c.o -c /home/wyf/clion/yftcp/src/icmp.c
+
+CMakeFiles/yftcp.dir/src/icmp.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/yftcp.dir/src/icmp.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/wyf/clion/yftcp/src/icmp.c > CMakeFiles/yftcp.dir/src/icmp.c.i
+
+CMakeFiles/yftcp.dir/src/icmp.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/yftcp.dir/src/icmp.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/wyf/clion/yftcp/src/icmp.c -o CMakeFiles/yftcp.dir/src/icmp.c.s
 
 # Object files for target yftcp
 yftcp_OBJECTS = \
-"CMakeFiles/yftcp.dir/main.cpp.o"
+"CMakeFiles/yftcp.dir/src/arp.c.o" \
+"CMakeFiles/yftcp.dir/src/main.c.o" \
+"CMakeFiles/yftcp.dir/src/function.c.o" \
+"CMakeFiles/yftcp.dir/src/ring.c.o" \
+"CMakeFiles/yftcp.dir/src/deal_packet.c.o" \
+"CMakeFiles/yftcp.dir/src/arp_table.c.o" \
+"CMakeFiles/yftcp.dir/src/timer.c.o" \
+"CMakeFiles/yftcp.dir/src/udp.c.o" \
+"CMakeFiles/yftcp.dir/src/deal_ipv4.c.o" \
+"CMakeFiles/yftcp.dir/src/rarp.c.o" \
+"CMakeFiles/yftcp.dir/src/tcp.c.o" \
+"CMakeFiles/yftcp.dir/src/icmp.c.o"
 
 # External object files for target yftcp
 yftcp_EXTERNAL_OBJECTS =
 
-yftcp: CMakeFiles/yftcp.dir/main.cpp.o
+yftcp: CMakeFiles/yftcp.dir/src/arp.c.o
+yftcp: CMakeFiles/yftcp.dir/src/main.c.o
+yftcp: CMakeFiles/yftcp.dir/src/function.c.o
+yftcp: CMakeFiles/yftcp.dir/src/ring.c.o
+yftcp: CMakeFiles/yftcp.dir/src/deal_packet.c.o
+yftcp: CMakeFiles/yftcp.dir/src/arp_table.c.o
+yftcp: CMakeFiles/yftcp.dir/src/timer.c.o
+yftcp: CMakeFiles/yftcp.dir/src/udp.c.o
+yftcp: CMakeFiles/yftcp.dir/src/deal_ipv4.c.o
+yftcp: CMakeFiles/yftcp.dir/src/rarp.c.o
+yftcp: CMakeFiles/yftcp.dir/src/tcp.c.o
+yftcp: CMakeFiles/yftcp.dir/src/icmp.c.o
 yftcp: CMakeFiles/yftcp.dir/build.make
 yftcp: CMakeFiles/yftcp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/tmp/tmp.Bm6tBQMEjW/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable yftcp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wyf/clion/yftcp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking C executable yftcp"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/yftcp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -105,6 +281,6 @@ CMakeFiles/yftcp.dir/clean:
 .PHONY : CMakeFiles/yftcp.dir/clean
 
 CMakeFiles/yftcp.dir/depend:
-	cd /tmp/tmp.Bm6tBQMEjW/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /tmp/tmp.Bm6tBQMEjW /tmp/tmp.Bm6tBQMEjW /tmp/tmp.Bm6tBQMEjW/cmake-build-debug /tmp/tmp.Bm6tBQMEjW/cmake-build-debug /tmp/tmp.Bm6tBQMEjW/cmake-build-debug/CMakeFiles/yftcp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/wyf/clion/yftcp/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/wyf/clion/yftcp /home/wyf/clion/yftcp /home/wyf/clion/yftcp/cmake-build-debug /home/wyf/clion/yftcp/cmake-build-debug /home/wyf/clion/yftcp/cmake-build-debug/CMakeFiles/yftcp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/yftcp.dir/depend
 

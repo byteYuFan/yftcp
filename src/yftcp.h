@@ -21,6 +21,12 @@
 #include <test/rte_malloc.h>
 #include <test/rte_ring.h>
 #include <test/rte_byteorder.h>
+#include <test/rte_launch.h>
+#include <test/rte_eal.h>
+#include <test/rte_per_lcore.h>
+#include <test/rte_lcore.h>
+#include <test/rte_debug.h>
+
 
 
 #else
@@ -40,6 +46,11 @@
 #include <rte_debug.h>
 #include <rte_malloc.h>
 #include <rte_ring.h>
+#include <rte_launch.h>
+#include <rte_eal.h>
+#include <rte_per_lcore.h>
+#include <rte_lcore.h>
+#include <rte_debug.h>
 #include <rte_byteorder.h>
 
 #endif

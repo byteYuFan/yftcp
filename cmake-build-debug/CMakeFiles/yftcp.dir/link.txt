@@ -1,1 +1,1 @@
-/usr/bin/c++ -g CMakeFiles/yftcp.dir/main.cpp.o -o yftcp 
+/usr/bin/cc -g CMakeFiles/yftcp.dir/src/arp.c.o CMakeFiles/yftcp.dir/src/main.c.o CMakeFiles/yftcp.dir/src/function.c.o CMakeFiles/yftcp.dir/src/ring.c.o CMakeFiles/yftcp.dir/src/deal_packet.c.o CMakeFiles/yftcp.dir/src/arp_table.c.o CMakeFiles/yftcp.dir/src/timer.c.o CMakeFiles/yftcp.dir/src/udp.c.o CMakeFiles/yftcp.dir/src/deal_ipv4.c.o CMakeFiles/yftcp.dir/src/rarp.c.o CMakeFiles/yftcp.dir/src/tcp.c.o CMakeFiles/yftcp.dir/src/icmp.c.o -o yftcp 
